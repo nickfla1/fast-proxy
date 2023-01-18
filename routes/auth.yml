@@ -1,0 +1,17 @@
+options:
+  endpoint: jsonplaceholder.typicode.com
+  protocol: https
+
+routes:
+  todos-by-id:
+    match: /todos/:id
+    method: GET
+  comments-by-id:
+    match: /comments/:id
+    method: GET
+  users:
+    match: /users
+    method: GET
+  add-user:
+    match: /users
+    method: POST

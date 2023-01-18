@@ -1,0 +1,20 @@
+{
+  "name": "fast-proxy",
+  "packageManager": "yarn@3.3.1",
+  "scripts": {
+    "build": "gulp",
+    "serve": "node ./src/main.js"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-beautify": "^3.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-wrap": "^0.15.0",
+    "yaml": "^2.2.1"
+  },
+  "dependencies": {
+    "find-my-way": "^7.4.0"
+  }
+}
