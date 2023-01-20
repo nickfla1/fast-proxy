@@ -1,6 +1,7 @@
 options:
   endpoint: jsonplaceholder.typicode.com
   protocol: https
+  resolver: simple
 
 routes:
   todos-by-id:

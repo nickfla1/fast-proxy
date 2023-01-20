@@ -1,22 +1,21 @@
-const http = require("http");
-const router = require("find-my-way")();
-
-const logger = require("./logger");
-const routes = require("./generated/routes");
-const resolvers = require("./resolvers");
-
 const PORT = process.env.PORT || 3000;
 
-routes(router, resolvers);
-
-const server = http.createServer((req, res) => {
-  router.lookup(req, res);
+const fastify = require("fastify")({
+  logger: true,
 });
 
-server.listen(PORT, (error) => {
-  if (error) {
-    throw error;
+fastify.register(require("./state/routes"));
+fastify.register(require("./resolvers"));
+fastify.register(require("./routes/state"));
+fastify.register(require("./routes/proxy"));
+
+const start = async () => {
+  try {
+    await fastify.listen({ port: PORT });
+  } catch (err) {
+    fastify.log.error(err);
+    process.exit(1);
   }
+};
 
-  logger.info(`Server listening on port ${PORT}`);
-});
+start();
