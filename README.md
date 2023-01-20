@@ -4,7 +4,8 @@ An experiemental HTTP proxy with "not-so-good" ideas.
 
 ## Example configuration
 
-Basic route configuration
+Basic route configuration:
+
 ```yaml title="my-apis.yaml"
 routes:
     get-users:
@@ -19,7 +20,7 @@ routes:
         endpoint: flight.example.com
 ```
 
-This will resoult in the following routes registered
+This will result in the following routes registered:
 
 ```js
 router.on("GET", "/users", (/* ... */) => { /* ... */ });
@@ -29,7 +30,7 @@ router.on("POST", "/planes/:from/:to", (/* ... */) => { /* ... */ });
 
 ## Configuration format
 
-Each yaml file is considered a group of routes and it's indipendent from other groups.
+Each yaml file is considered a group of routes and it's independent from other groups.
 
 ```yaml
 # Identifies the main route object
