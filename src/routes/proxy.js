@@ -12,7 +12,7 @@ async function routes(fastify) {
         method: route.method,
         url: route.match,
         handler: (req, reply) => {
-          return fastify.resolvers[resolver](req, reply, route);
+          return fastify.resolvers[resolver](fastify, req, reply, route);
         },
       });
     }
