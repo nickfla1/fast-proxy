@@ -6,9 +6,9 @@ const PROTOCOL = "http";
  * @param {Object} route
  */
 async function simple(req, reply, route) {
-  const { method, match, endpoint } = route;
+  const { method, to, endpoint } = route;
 
-  const url = new URL(`${PROTOCOL}://${endpoint}${match}`);
+  const url = new URL(`${PROTOCOL}://${endpoint}${to}`);
 
   const headers = new Headers(req.headers);
 
