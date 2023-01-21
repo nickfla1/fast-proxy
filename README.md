@@ -1,12 +1,33 @@
 # fast-proxy
 
-An experiemental HTTP proxy with "not-so-good" ideas.
+> **Note**
+> Temporary name :shrug:
 
-## Example configuration
+An experimental HTTP proxy with "not-so-good" ideas.
 
-Basic route configuration:
+## Table of Contents
 
-```yaml title="my-apis.yaml"
+1. [Application config](#config)
+    1. [Example config](#config-example)
+    2. [Format](#config-format)
+        1. [Basic configs](#config-format-basic)
+        2. [Route Providers](#config-format-providers)
+        2. [Route Resolvers](#config-format-resolvers)
+2. [Routes configuration](#routes)
+    1. [Example config](#routes-example)
+    2. [Format](#routes-format)
+        1. [Route definition](#routes-format-route)
+        2. [Options](#routes-format-options)
+
+## Application configuration <a name="config"></a>
+
+TODO
+
+## Routes configuration <a name="routes"></a>
+
+### Example config <a name="routes-example">
+
+```yaml
 routes:
     get-users:
         match: /users
@@ -28,9 +49,11 @@ router.on("GET", "/planes/:from/:to", (/* ... */) => { /* ... */ });
 router.on("POST", "/planes/:from/:to", (/* ... */) => { /* ... */ });
 ```
 
-## Configuration format
+### Format <a name="routes-format"></a>
 
 Each yaml file is considered a group of routes and it's independent from other groups.
+
+#### Route definition <a name="routes-format-route"></a>
 
 ```yaml
 # Identifies the main route object
@@ -69,11 +92,13 @@ routes:
         # Optional
         # Default: "simple"
         resolver: simple
+```
 
+#### Options <a name="routes-format-options"></a>
 
-# Shared set of options shared across the whole file
-# These options are not shared across other files
-#
+Options are shared across all routes in the same file.
+
+```yaml
 # Optional
 options:
     # Supported shared options are:
