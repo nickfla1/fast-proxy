@@ -1,23 +1,22 @@
 # fast-proxy
 
-> **Note**
 > Temporary name :shrug:
 
 An experimental HTTP proxy with "not-so-good" ideas.
 
 ## Table of Contents
 
-1. [Application config](#config)
-    1. [Example config](#config-example)
-    2. [Format](#config-format)
-        1. [Basic configs](#config-format-basic)
-        2. [Route Providers](#config-format-providers)
-        2. [Route Resolvers](#config-format-resolvers)
-2. [Routes configuration](#routes)
-    1. [Example config](#routes-example)
-    2. [Format](#routes-format)
-        1. [Route definition](#routes-format-route)
-        2. [Options](#routes-format-options)
+- [Application config](#config)
+    - [Example config](#config-example)
+    - [Format](#config-format)
+        - [Basic configs](#config-format-basic)
+        - [Route Providers](#config-format-providers)
+        - [Route Resolvers](#config-format-resolvers)
+- [Routes configuration](#routes)
+    - [Example config](#routes-example)
+    - [Format](#routes-format)
+        - [Route definition](#routes-format-route)
+        - [Options](#routes-format-options)
 
 ## Application configuration <a name="config"></a>
 
