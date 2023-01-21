@@ -18,6 +18,9 @@ An experimental HTTP proxy with "not-so-good" ideas.
         - [Route definition](#routes-format-route)
         - [Options](#routes-format-options)
 
+> **Warning**
+> Some of the configurations and information below are not implemented yet and/or might not work as described.
+
 ## Application configuration <a name="config"></a>
 
 Configuration is read from a file named `.fast.yaml` or `.fast.yml`. The file must be located in the directory where the application is running. If no file is provided, default configurations values are used.
