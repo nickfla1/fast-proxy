@@ -9,7 +9,7 @@ An experimental HTTP proxy with "not-so-good" ideas.
 - [Application config](#config)
     - [Example config](#config-example)
     - [Format](#config-format)
-        - [Basic configs](#config-format-basic)
+        - [Basic config](#config-format-basic)
         - [Route Providers](#config-format-providers)
         - [Route Resolvers](#config-format-resolvers)
 - [Routes configuration](#routes)
@@ -20,7 +20,69 @@ An experimental HTTP proxy with "not-so-good" ideas.
 
 ## Application configuration <a name="config"></a>
 
-TODO
+Configuration is read from a file named `.fast.yaml` or `.fast.yml`. The file must be located in the directory where the application is running. If no file is provided, default configurations values are used.
+
+### Example config <a name="config-example"></a>
+
+```yaml
+port: 3000
+```
+
+### Format <a name="config-format"></a>
+
+#### Basic config
+
+```yaml
+# Port on which to run the proxy server
+#
+# Optional
+# Default: 3000
+port: 3000
+
+# Name of the provided that will be used to read the route configuration
+# Supported providers are:
+# - filesystem
+#
+# Optional
+# Default: "filesystem"
+routesProvider: filesystem
+```
+
+#### Route Providers <a name="config-format-providers"></a>
+
+```yaml
+# Route providers mapping
+#
+# Required
+routesProviders:
+
+    # The `filesystem` route provider configuration
+    #
+    # Required if `routesProvider` is "filesystem"
+    filesystem:
+        # Directory where route configs are found
+        #
+        # Required
+        routesDir: routes
+```
+
+#### Route Resolvers <a name="config-format-resolvers"></a>
+
+This section is used to add custom resolvers plugins.
+
+```yaml
+# fast-proxy will use the key from the mapping to add a custom resolver
+# The value of the mapping is the location or identifier of the plugin
+# Supported protocols are:
+# - File: file://../plugin/index.js
+# - NPM Registry: npm://foo-plugin
+# - GIT: git://foo/bar.git
+# 
+# NOTE: in order for plugins to work you either must point to the javascript file
+# if not specified it will look for the `index.js` file in the root of the location
+resolvers:
+    resolver-name: git://foo/bar.git
+```
 
 ## Routes configuration <a name="routes"></a>
 
