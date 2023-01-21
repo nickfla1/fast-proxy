@@ -5,7 +5,7 @@ const fastifyPlugin = require("fastify-plugin");
  */
 async function resolvers(fastify) {
   fastify.decorate("resolvers", {
-    simple: require("./simple"),
+    simple: require("../resolvers/simple"),
   });
 }
 

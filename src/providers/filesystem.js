@@ -1,4 +1,3 @@
-const fastifyPlugin = require("fastify-plugin");
 const fs = require("fs");
 const path = require("path");
 const yaml = require("yaml");
@@ -57,10 +56,7 @@ function normalizeRoutes(options, routes) {
   return { result: routes, error: null };
 }
 
-/**
- * @param {import("fastify").FastifyInstance} fastify
- */
-async function stateRoutes(fastify) {
+function load() {
   const files = fs.readdirSync(ROUTES_DIR);
 
   const supportedFiles = files.filter((file) =>
@@ -83,7 +79,7 @@ async function stateRoutes(fastify) {
     state.set(name, result);
   });
 
-  fastify.decorate("stateRoutes", state);
+  return state;
 }
 
-module.exports = fastifyPlugin(stateRoutes);
+module.exports = load;
