@@ -1,21 +1,11 @@
-const PORT = process.env.PORT || 3000;
+const app = require("avvio")();
 
-const fastify = require("fastify")({
-  logger: true,
+app.use(function (instance, _, done) {
+  instance.config = require("./config")();
+  done();
 });
 
-fastify.register(require("./state/routes"));
-fastify.register(require("./resolvers"));
-fastify.register(require("./routes/state"));
-fastify.register(require("./routes/proxy"));
-
-const start = async () => {
-  try {
-    await fastify.listen({ port: PORT });
-  } catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
-};
-
-start();
+app.use(async function (instance, _, done) {
+  await require("./server")(instance.config);
+  done();
+});
