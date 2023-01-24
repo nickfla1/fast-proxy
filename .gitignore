@@ -1,3 +1,4 @@
+# Yarn
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -8,4 +9,9 @@
 .pnp.*
 node_modules/
 
-dist/
+# Testing
+.nyc_output/
+
+# Development
+.fast.yaml
+routes/
