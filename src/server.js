@@ -5,6 +5,8 @@ async function server(config) {
     logger: true,
   });
 
+  fastify.decorate("config", config);
+
   fastify.register(require("./decorators/routes"));
   fastify.register(require("./decorators/resolvers"));
   fastify.register(require("./routes/state"));
