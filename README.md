@@ -4,6 +4,8 @@
 
 An experimental HTTP proxy with "not-so-good" ideas.
 
+![Tests workflow](https://github.com/nickfla1/fast-proxy/actions/workflows/tests.yml/badge.svg)
+
 ## Table of Contents
 
 - [Application config](#config)
