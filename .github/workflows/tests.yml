@@ -21,7 +21,7 @@ jobs:
       
       - name: Install
         run: |
-          yarn workspaces focus --production
+          yarn install
         
       - name: Run tests
         run: |
