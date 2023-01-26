@@ -1,8 +1,8 @@
-async function server(config) {
+async function server (config) {
   const { port } = config;
 
   const fastify = require("fastify")({
-    logger: true,
+    logger: true
   });
 
   fastify.decorate("config", config);

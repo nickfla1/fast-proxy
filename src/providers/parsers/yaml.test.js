@@ -21,8 +21,8 @@ test("parses routes", (t) => {
       match: "/test",
       to: "/test-to",
       method: "POST",
-      resolver: "foo",
-    },
+      resolver: "foo"
+    }
   });
 
   t.end();
@@ -49,8 +49,8 @@ test("handles shared options", (t) => {
       match: "/test",
       to: "/test-to",
       method: "POST",
-      resolver: "test",
-    },
+      resolver: "test"
+    }
   });
 
   t.end();

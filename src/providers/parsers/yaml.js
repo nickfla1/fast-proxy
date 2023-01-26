@@ -1,4 +1,5 @@
 const yaml = require("yaml");
+const { ParsingError } = require("./errors");
 
 const ajv = new (require("ajv"))();
 
@@ -11,12 +12,12 @@ const validateRouteSchema = ajv.compile({
     to: { type: "string" },
     match: { type: "string" },
     endpoint: { type: "string" },
-    resolver: { type: "string" },
+    resolver: { type: "string" }
   },
-  required: ["to", "match", "endpoint", "resolver"],
+  required: ["to", "match", "endpoint", "resolver"]
 });
 
-function normalizeAndValidateRoutes(options, routes) {
+function normalizeAndValidateRoutes (options, routes) {
   for (const key of Object.keys(routes)) {
     const route = routes[key];
 
@@ -55,7 +56,7 @@ function normalizeAndValidateRoutes(options, routes) {
  * @param {String} content
  * @returns {Object}
  */
-function parse(content) {
+function parse (content) {
   const object = yaml.parse(content);
   if (!object) {
     throw new ParsingError("empty routes");

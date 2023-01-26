@@ -4,7 +4,7 @@ const parse = require("./parsers/yaml");
 
 const SUPPORTED_FILE_EXTS = [".yml", ".yaml"];
 
-function load(config) {
+function load (config) {
   const files = fs.readdirSync(config.routesDir);
 
   const supportedFiles = files.filter((file) =>

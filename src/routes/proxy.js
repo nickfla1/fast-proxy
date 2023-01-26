@@ -1,7 +1,7 @@
 /**
  * @param {import("fastify").FastifyInstance} fastify
  */
-async function routes(fastify) {
+async function routes (fastify) {
   const routes = fastify.stateRoutes;
 
   routes.forEach((group) => {
@@ -13,7 +13,7 @@ async function routes(fastify) {
         url: route.match,
         handler: (req, reply) => {
           return fastify.resolvers[resolver](fastify, req, reply, route);
-        },
+        }
       });
     }
   });

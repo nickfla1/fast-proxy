@@ -20,17 +20,17 @@ const validateConfigSchema = ajv.compile({
         filesystem: {
           type: "object",
           properties: {
-            routesDir: { type: "string" },
+            routesDir: { type: "string" }
           },
-          required: ["routesDir"],
-        },
-      },
+          required: ["routesDir"]
+        }
+      }
     },
-    resolvers: { type: "object" },
-  },
+    resolvers: { type: "object" }
+  }
 });
 
-function loadFile() {
+function loadFile () {
   for (const ext of CONFIG_EXTS) {
     try {
       const filename = `${CONFIG_NAME}${ext}`;
@@ -43,7 +43,7 @@ function loadFile() {
   return null;
 }
 
-function loadConfigFromCWD() {
+function loadConfigFromCWD () {
   const config = loadFile();
 
   if (config) {
@@ -57,7 +57,7 @@ function loadConfigFromCWD() {
   return {
     port: config?.port || DEFAULT_PORT,
     routesProvider: config?.routesProvider || DEFAULT_ROUTES_PROVIDER,
-    routesProviders: config?.routesProviders || {},
+    routesProviders: config?.routesProviders || {}
   };
 }
 

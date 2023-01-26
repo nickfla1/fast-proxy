@@ -7,11 +7,11 @@ const METHODS_WITH_BODY = ["POST", "PUT", "PATCH", "DELETE"];
  * @param {import("fastify").FastifyReply} reply
  * @param {Object} route
  */
-async function simple(fastify, req, reply, route) {
+async function simple (fastify, req, reply, route) {
   const { method, to, endpoint } = route;
 
   const url = `${PROTOCOL}://${endpoint}${to}`;
-  const headers = new Headers(req.headers);
+  const headers = new fetch.Headers(req.headers);
 
   // Why do we need to do so?
   headers.delete("host");
@@ -32,7 +32,7 @@ async function simple(fastify, req, reply, route) {
     const response = await fetch(url, {
       method,
       headers,
-      body,
+      body
     });
 
     reply
@@ -48,7 +48,7 @@ async function simple(fastify, req, reply, route) {
       .send({
         status: "error",
         message: `error while proxying to ${method} ${url}`,
-        error: error.message,
+        error: error.message
       });
   }
 }
