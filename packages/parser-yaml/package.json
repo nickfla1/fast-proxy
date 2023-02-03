@@ -1,0 +1,17 @@
+{
+  "name": "@fast/parser-yaml",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap"
+  },
+  "dependencies": {
+    "@fast/core": "workspace:*",
+    "ajv": "^8.12.0",
+    "tap": "^16.3.4",
+    "yaml": "^2.2.1"
+  },
+  "tap": {
+    "coverage-map": "tests.map.js"
+  }
+}

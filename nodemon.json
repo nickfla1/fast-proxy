@@ -1,4 +1,0 @@
-{
-  "watch": ["src/", "routes/", "products/"],
-  "ext": "js, yaml, yml"
-}

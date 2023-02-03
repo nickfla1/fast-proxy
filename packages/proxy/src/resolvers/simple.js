@@ -11,7 +11,10 @@ async function simple (fastify, req, reply, route) {
   const { method, to, endpoint } = route;
 
   const url = `${PROTOCOL}://${endpoint}${to}`;
-  const headers = new fetch.Headers(req.headers);
+
+  // FIXME: Headers is defined but ESLint is complaining
+  // eslint-disable-next-line no-undef
+  const headers = new Headers(req.headers);
 
   // Why do we need to do so?
   headers.delete("host");

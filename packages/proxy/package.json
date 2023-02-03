@@ -1,0 +1,23 @@
+{
+  "name": "@fast/proxy",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "serve": "nodemon ./src/main.js",
+    "test": "tap"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "tap": "^16.3.4"
+  },
+  "dependencies": {
+    "@fast/parser-yaml": "workspace:*",
+    "@fast/provider-file": "workspace:*",
+    "avvio": "^8.2.0",
+    "fastify": "^4.11.0",
+    "fastify-plugin": "^4.5.0"
+  },
+  "tap": {
+    "coverage-map": "tests.map.js"
+  }
+}

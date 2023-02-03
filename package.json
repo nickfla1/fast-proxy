@@ -1,25 +1,12 @@
 {
   "name": "fast-proxy",
   "packageManager": "yarn@3.3.1",
-  "scripts": {
-    "serve": "nodemon ./src/main.js",
-    "test": "tap"
-  },
   "devDependencies": {
     "eslint": "^8.32.0",
     "eslint-config-standard": "^17.0.0",
-    "nodemon": "^2.0.20",
-    "standard": "^17.0.0",
-    "tap": "^16.3.4",
-    "yaml": "^2.2.1"
+    "standard": "^17.0.0"
   },
-  "dependencies": {
-    "ajv": "^8.12.0",
-    "avvio": "^8.2.0",
-    "fastify": "^4.11.0",
-    "fastify-plugin": "^4.5.0"
-  },
-  "tap": {
-    "coverage-map": "tests.map.js"
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }

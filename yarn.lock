@@ -348,6 +348,45 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fast/core@workspace:*, @fast/core@workspace:packages/fast-core":
+  version: 0.0.0-use.local
+  resolution: "@fast/core@workspace:packages/fast-core"
+  languageName: unknown
+  linkType: soft
+
+"@fast/parser-yaml@workspace:*, @fast/parser-yaml@workspace:packages/parser-yaml":
+  version: 0.0.0-use.local
+  resolution: "@fast/parser-yaml@workspace:packages/parser-yaml"
+  dependencies:
+    "@fast/core": "workspace:*"
+    ajv: ^8.12.0
+    tap: ^16.3.4
+    yaml: ^2.2.1
+  languageName: unknown
+  linkType: soft
+
+"@fast/provider-file@workspace:*, @fast/provider-file@workspace:packages/provider-file":
+  version: 0.0.0-use.local
+  resolution: "@fast/provider-file@workspace:packages/provider-file"
+  dependencies:
+    tap: ^16.3.4
+  languageName: unknown
+  linkType: soft
+
+"@fast/proxy@workspace:packages/proxy":
+  version: 0.0.0-use.local
+  resolution: "@fast/proxy@workspace:packages/proxy"
+  dependencies:
+    "@fast/parser-yaml": "workspace:*"
+    "@fast/provider-file": "workspace:*"
+    avvio: ^8.2.0
+    fastify: ^4.11.0
+    fastify-plugin: ^4.5.0
+    nodemon: ^2.0.20
+    tap: ^16.3.4
+  languageName: unknown
+  linkType: soft
+
 "@fastify/ajv-compiler@npm:^3.3.1":
   version: 3.5.0
   resolution: "@fastify/ajv-compiler@npm:3.5.0"
@@ -1932,16 +1971,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fast-proxy@workspace:."
   dependencies:
-    ajv: ^8.12.0
-    avvio: ^8.2.0
     eslint: ^8.32.0
     eslint-config-standard: ^17.0.0
-    fastify: ^4.11.0
-    fastify-plugin: ^4.5.0
-    nodemon: ^2.0.20
     standard: ^17.0.0
-    tap: ^16.3.4
-    yaml: ^2.2.1
   languageName: unknown
   linkType: soft
 

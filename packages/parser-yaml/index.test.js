@@ -1,6 +1,6 @@
 const { test } = require("tap");
 
-const parse = require("./yaml");
+const parse = require("./index");
 
 test("parses routes", (t) => {
   const content = `

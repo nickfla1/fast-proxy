@@ -1,5 +1,5 @@
 const yaml = require("yaml");
-const { ParsingError } = require("./errors");
+const { ParsingError } = require("@fast/core");
 
 const ajv = new (require("ajv"))();
 
